@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projekte & Referenzen | UBB Bausanierung</title>
+<meta name="description" content="Kernsanierungen, Estricharbeiten und Innenausbau in Südbaden — dokumentierte Referenzprojekte mit Fakten.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="index.html">UBB<span>.</span> Bausanierung</a>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="sanierung-umbau.html">Sanierung &amp; Umbau</a></li>
+        <li><a href="bodenarbeiten.html">Bodenarbeiten</a></li>
+        <li><a href="innenarbeiten.html">Innenarbeiten</a></li>
+        <li><a href="projekte.html">Projekte</a></li>
+        <li><a href="index.html#ueber-uns">Über uns</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <a class="lang-switch" href="en.html"><b>DE</b> / EN</a>
+      <a class="btn btn-primary btn-nav" href="anfrage.html">Anfrage</a>
+      <button class="nav-toggle" onclick="document.getElementById('mainNav').classList.toggle('open')">☰</button>
+    </div>
+  </div>
+</header>
+<section class="hero hero-slim">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span>Projekte</div>
+    <span class="kicker">Referenzen</span>
+    <h1>Unsere Projekte</h1>
+    <p class="lede">Echte Baustellen, echte Zahlen. Filtern Sie nach Leistungsbereich.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-f="all">Alle</button>
+      <button class="filter-btn" data-f="sanierung">Sanierung</button>
+      <button class="filter-btn" data-f="boden">Bodenarbeiten</button>
+      <button class="filter-btn" data-f="innen">Innenausbau</button>
+      <button class="filter-btn" data-f="umbau">Umbau</button>
+    </div>
+    <div class="grid cols-3" id="projectGrid">
+      <a class="card-project" href="projekt-mfh-freiburg.html" data-cat="sanierung">
+        <div class="img ph-a">[ Projektfoto ]</div>
+        <div class="body">
+          <div class="meta-row"><span>Kernsanierung</span><span>2025</span></div>
+          <h3>Mehrfamilienhaus, Freiburg</h3>
+          <div class="facts"><div><b>420 m²</b>Fläche</div><div><b>14 Wo.</b>Bauzeit</div><div><b>6</b>Gewerke</div></div>
+        </div>
+      </a>
+      <a class="card-project" href="projekt-mfh-freiburg.html" data-cat="boden">
+        <div class="img ph-b">[ Projektfoto ]</div>
+        <div class="body">
+          <div class="meta-row"><span>Estricharbeiten</span><span>2025</span></div>
+          <h3>Gewerbehalle, Müllheim</h3>
+          <div class="facts"><div><b>850 m²</b>Fläche</div><div><b>3 Wo.</b>Bauzeit</div><div><b>2</b>Gewerke</div></div>
+        </div>
+      </a>
+      <a class="card-project" href="projekt-mfh-freiburg.html" data-cat="umbau">
+        <div class="img ph-c">[ Projektfoto ]</div>
+        <div class="body">
+          <div class="meta-row"><span>Umbau</span><span>2024</span></div>
+          <h3>Praxisumbau, Bad Krozingen</h3>
+          <div class="facts"><div><b>180 m²</b>Fläche</div><div><b>8 Wo.</b>Bauzeit</div><div><b>5</b>Gewerke</div></div>
+        </div>
+      </a>
+      <a class="card-project" href="projekt-mfh-freiburg.html" data-cat="boden">
+        <div class="img ph-a">[ Projektfoto ]</div>
+        <div class="body">
+          <div class="meta-row"><span>Sichtestrich</span><span>2024</span></div>
+          <h3>Loft-Wohnung, Lörrach</h3>
+          <div class="facts"><div><b>140 m²</b>Fläche</div><div><b>2 Wo.</b>Bauzeit</div><div><b>1</b>Gewerk</div></div>
+        </div>
+      </a>
+      <a class="card-project" href="projekt-mfh-freiburg.html" data-cat="innen">
+        <div class="img ph-b">[ Projektfoto ]</div>
+        <div class="body">
+          <div class="meta-row"><span>Innenausbau</span><span>2024</span></div>
+          <h3>Bürofläche, Breisach</h3>
+          <div class="facts"><div><b>310 m²</b>Fläche</div><div><b>6 Wo.</b>Bauzeit</div><div><b>4</b>Gewerke</div></div>
+        </div>
+      </a>
+      <a class="card-project" href="projekt-mfh-freiburg.html" data-cat="sanierung">
+        <div class="img ph-c">[ Projektfoto ]</div>
+        <div class="body">
+          <div class="meta-row"><span>Bausanierung</span><span>2023</span></div>
+          <h3>Altbau, Rheinfelden</h3>
+          <div class="facts"><div><b>260 m²</b>Fläche</div><div><b>10 Wo.</b>Bauzeit</div><div><b>5</b>Gewerke</div></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap inner">
+    <h2>Ihr Projekt könnte das <em>nächste</em> sein.</h2>
+    <div class="actions">
+      <a class="btn btn-primary" href="anfrage.html">Projektanfrage starten <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<script>
+document.getElementById('filterBar').addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn'); if (!btn) return;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const f = btn.dataset.f;
+  document.querySelectorAll('#projectGrid .card-project').forEach(c => {
+    c.classList.toggle('hidden', f !== 'all' && c.dataset.cat !== f);
+  });
+});
+</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">UBB<span>.</span> Bausanierung</div>
+        <p>Biergasse 1 · 79426 Buggingen<br>+49 7631 1730287<br>info@ubb-bausanierung.de</p>
+      </div>
+      <div>
+        <h4>Leistungen</h4>
+        <a href="sanierung-umbau.html">Sanierung &amp; Umbau</a>
+        <a href="bodenarbeiten.html">Bodenarbeiten</a>
+        <a href="innenarbeiten.html">Innenarbeiten</a>
+      </div>
+      <div>
+        <h4>Unternehmen</h4>
+        <a href="index.html#ueber-uns">Über uns</a>
+        <a href="projekte.html">Projekte</a>
+        <a href="standort-freiburg.html">Standorte</a>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <a href="anfrage.html">Projektanfrage</a>
+        <a href="tel:+4976311730287">+49 7631 1730287</a>
+        <a href="https://www.instagram.com/ubb.bausanierung">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© 2026 UBB Bausanierung GmbH · HRB 711948, Amtsgericht Freiburg</span>
+      <span><a href="#" style="color:inherit">Impressum</a> · <a href="#" style="color:inherit">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
