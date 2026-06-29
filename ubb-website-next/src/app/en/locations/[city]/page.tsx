@@ -63,7 +63,7 @@ export default async function EnCityPage({ params }: { params: Promise<{ city: s
             <h3>Direct contact</h3>
             <ul className="contact-list">
               <li><strong>Phone</strong><a href="tel:+4976311730287">+49 7631 1730287</a></li>
-              <li><strong>WhatsApp</strong><a href="https://wa.me/4976311730287">Start chat</a></li>
+              <li><strong>WhatsApp</strong><a href="https://wa.me/4976311730287" target="_blank" rel="noopener noreferrer">Start chat</a></li>
               <li><strong>Email</strong><a href="mailto:info@ubb-bausanierung.de">info@ubb-bausanierung.de</a></li>
               <li><strong>Registered office</strong>Biergasse 1, 79426 Buggingen</li>
             </ul>

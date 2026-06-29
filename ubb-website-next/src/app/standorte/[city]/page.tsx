@@ -62,7 +62,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
               </li>
               <li>
                 <strong>WhatsApp</strong>
-                <a href="https://wa.me/4976311730287">Chat starten</a>
+                <a href="https://wa.me/4976311730287" target="_blank" rel="noopener noreferrer">Chat starten</a>
               </li>
               <li>
                 <strong>E-Mail</strong>

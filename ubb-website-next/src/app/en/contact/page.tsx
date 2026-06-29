@@ -62,7 +62,7 @@ export default function EnContactPage() {
             <h2>Where to find us.</h2>
             <p>Biergasse 1 · 79426 Buggingen · Mon–Fri 7:00–17:00</p>
           </div>
-          <MapEmbed />
+          <MapEmbed lang="en" />
         </div>
       </section>
     </>
