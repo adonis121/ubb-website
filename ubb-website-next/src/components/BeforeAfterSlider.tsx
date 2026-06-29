@@ -34,10 +34,10 @@ export default function BeforeAfterSlider() {
       }}
     >
       <div className="layer before-l">
-        <Image src={beforeImage} alt="Vorher — Baustelle" fill style={{ objectFit: 'cover', objectPosition: 'center' }} />
+        <Image src={beforeImage} alt="Vorher — Baustelle" fill sizes="(max-width:1200px) 100vw, 1200px" style={{ objectFit: 'cover', objectPosition: 'center' }} />
       </div>
       <div className="layer after-l" style={{ clipPath: `inset(0 0 0 ${pos}%)` }}>
-        <Image src={afterImage} alt="Nachher — fertiggestellt" fill style={{ objectFit: 'cover', objectPosition: 'center' }} />
+        <Image src={afterImage} alt="Nachher — fertiggestellt" fill sizes="(max-width:1200px) 100vw, 1200px" style={{ objectFit: 'cover', objectPosition: 'center' }} />
       </div>
       <div className="handle" style={{ left: `${pos}%` }} />
       <span className="badge b1">Vorher</span>
