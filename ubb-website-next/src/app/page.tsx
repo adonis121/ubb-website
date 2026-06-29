@@ -1,0 +1,312 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import Image from 'next/image'
+import BeforeAfterSlider from '@/components/BeforeAfterSlider'
+import TestimonialsSlider from '@/components/TestimonialsSlider'
+import { heroImage, serviceImages, projectImages } from '@/data/imageMap'
+
+export const metadata: Metadata = {
+  title: 'UBB Bausanierung GmbH | Sanierung, Umbau & Innenausbau in Südbaden',
+  description: 'Kernsanierung, Umbau und Innenausbau aus einer Hand. Seit 2010 in Freiburg, Müllheim und Südbaden. 15 Fachleute · 4,3★ · Ein Ansprechpartner.',
+}
+
+export default function HomePage() {
+  return (
+    <>
+      {/* HERO */}
+      <section className="hero">
+        <div className="hero-bg">
+          <Image src={heroImage} alt="UBB Bausanierung — Innenausbau" fill priority />
+        </div>
+        <div className="hero-overlay" />
+        <div className="wrap hero-wrap">
+          <div className="hero-content">
+            <span className="kicker">Bausanierung · Südbaden · seit 2010</span>
+            <h1>Substanz, die <em>Generationen</em> überdauert.</h1>
+            <p className="lede">Kernsanierung, Umbau und Innenausbau aus einer Hand. Ein Ansprechpartner, 15 Fachleute, ein Standard: Ihrer.</p>
+            <div className="hero-ctas">
+              <Link className="btn btn-primary" href="/anfrage">Projektanfrage starten <span className="arrow">→</span></Link>
+              <Link className="btn btn-outline-light" href="/projekte">Projekte ansehen</Link>
+            </div>
+          </div>
+          <div className="hero-panel">
+            <div className="stat"><b>15+</b><span>Jahre Erfahrung</span></div>
+            <div className="stat"><b>15</b><span>Fachleute im Team</span></div>
+            <div className="stat"><b>4,3★</b><span>Google-Bewertungen</span></div>
+            <div className="stat"><b>7</b><span>Standorte</span></div>
+          </div>
+        </div>
+      </section>
+
+      {/* LEISTUNGEN */}
+      <section className="section">
+        <div className="wrap">
+          <div className="section-head">
+            <span className="kicker">Leistungen</span>
+            <h2>Alles aus einer Hand. Ein Ansprechpartner.</h2>
+            <p>Drei Leistungsbereiche, alle Gewerke koordiniert — inklusive Partnerfirmen für Elektro und Sanitär.</p>
+          </div>
+          <div className="grid cols-3">
+            <Link className="card-service" href="/sanierung-umbau">
+              <div className="card-service-thumb">
+                <Image src={serviceImages['sanierung-umbau']} alt="Sanierung & Umbau" fill sizes="(max-width:768px) 100vw, 33vw" />
+              </div>
+              <div className="card-service-body">
+                <span className="num">01 —</span>
+                <h3>Sanierung &amp; Umbau</h3>
+                <p>Von der Kernsanierung bis zum Abbruch: Wir bringen Bestandsgebäude in ihre beste Form.</p>
+                <div className="tags">
+                  <span className="tag-chip">Bausanierung</span>
+                  <span className="tag-chip">Kernsanierung</span>
+                  <span className="tag-chip">Umbau</span>
+                  <span className="tag-chip">Abbruch</span>
+                </div>
+              </div>
+            </Link>
+            <Link className="card-service" href="/bodenarbeiten">
+              <div className="card-service-thumb">
+                <Image src={serviceImages['bodenarbeiten']} alt="Bodenarbeiten" fill sizes="(max-width:768px) 100vw, 33vw" />
+              </div>
+              <div className="card-service-body">
+                <span className="num">02 —</span>
+                <h3>Bodenarbeiten</h3>
+                <p>Estrich, Beschichtung, Fliesen und Spachteltechnik — Böden für Jahrzehnte, nicht Jahre.</p>
+                <div className="tags">
+                  <span className="tag-chip">Estrich</span>
+                  <span className="tag-chip">Beschichtung</span>
+                  <span className="tag-chip">Fliesen</span>
+                  <span className="tag-chip">Spachteltechnik</span>
+                </div>
+              </div>
+            </Link>
+            <Link className="card-service" href="/innenarbeiten">
+              <div className="card-service-thumb">
+                <Image src={serviceImages['innenarbeiten']} alt="Innenarbeiten" fill sizes="(max-width:768px) 100vw, 33vw" />
+              </div>
+              <div className="card-service-body">
+                <span className="num">03 —</span>
+                <h3>Innenarbeiten</h3>
+                <p>Trockenbau, Putz, Stuck und Malerarbeiten — präziser Innenausbau bis ins Detail.</p>
+                <div className="tags">
+                  <span className="tag-chip">Trockenbau</span>
+                  <span className="tag-chip">Putz &amp; Stuck</span>
+                  <span className="tag-chip">Maler</span>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* REFERENZPROJEKT */}
+      <section className="section alt">
+        <div className="wrap">
+          <div className="section-head">
+            <span className="kicker">Referenzprojekt</span>
+            <h2>Sehen Sie den Unterschied.</h2>
+            <p>Mehrfamilienhaus Freiburg — Kernsanierung, 420 m², 14 Wochen. Ziehen Sie den Regler.</p>
+          </div>
+          <BeforeAfterSlider />
+          <p style={{ marginTop: '1rem' }}>
+            <Link className="btn btn-ghost" href="/projekte/mfh-freiburg">Zur Projektgeschichte <span className="arrow">→</span></Link>
+          </p>
+        </div>
+      </section>
+
+      {/* WARUM UBB */}
+      <section className="section dark" id="ueber-uns">
+        <div className="wrap">
+          <div className="section-head">
+            <span className="kicker">Warum UBB</span>
+            <h2>Wir versprechen nichts, was wir nicht halten.</h2>
+          </div>
+          <div className="grid cols-3">
+            <div className="value">
+              <h3>Komplettlösung</h3>
+              <p>Vom Rohzustand bis zur finalen Ausführung — alle Gewerke koordiniert, inklusive Elektro- und Sanitärpartner. Sie führen ein Gespräch, nicht sieben.</p>
+            </div>
+            <div className="value">
+              <h3>Ein Ansprechpartner</h3>
+              <p>Eine Nummer für alles. Klare Kommunikation, effiziente Terminabstimmung, keine Zuständigkeits-Pingpongs zwischen verschiedenen Betrieben.</p>
+            </div>
+            <div className="value">
+              <h3>Termintreue</h3>
+              <p>Realistischer Plan vor Baustart, Abschluss im vereinbarten Rahmen. Seit 2010 — das spricht sich herum in der Region.</p>
+            </div>
+            <div className="value">
+              <h3>Transparente Preise</h3>
+              <p>Detailliertes Angebot vor Beginn. Keine versteckten Nachträge — Änderungen werden besprochen, bevor sie ausgeführt werden.</p>
+            </div>
+            <div className="value">
+              <h3>Regional verwurzelt</h3>
+              <p>Firmensitz in Buggingen seit 2010. Kurze Wege, lokale Kenntnisse, persönliche Verantwortung — kein anonymes Unternehmen von außerhalb.</p>
+            </div>
+            <div className="value">
+              <h3>Qualität dokumentiert</h3>
+              <p>Fotodokumentation und Abnahmeprotokoll bei jedem Projekt. Sie wissen immer, was gemacht wurde — und haben einen Nachweis in der Hand.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PROJEKTE */}
+      <section className="section">
+        <div className="wrap">
+          <div className="section-head">
+            <span className="kicker">Projekte</span>
+            <h2>Arbeit, die für sich spricht.</h2>
+          </div>
+          <div className="grid cols-3">
+            {(['mfh-freiburg','gewerbehalle-muellheim','praxisumbau-bad-krozingen'] as const).map((slug) => {
+              const meta: Record<string, {type:string;year:string;title:string;area:string;dur:string;trades:string}> = {
+                'mfh-freiburg':              {type:'Kernsanierung',year:'2025',title:'Mehrfamilienhaus, Freiburg',      area:'420 m²',dur:'14 Wo.',trades:'6'},
+                'gewerbehalle-muellheim':    {type:'Estricharbeiten',year:'2025',title:'Gewerbehalle, Müllheim',         area:'850 m²',dur:'3 Wo.',trades:'2'},
+                'praxisumbau-bad-krozingen': {type:'Umbau',year:'2024',title:'Praxisumbau, Bad Krozingen',              area:'180 m²',dur:'8 Wo.',trades:'5'},
+              }
+              const m = meta[slug]
+              return (
+                <Link key={slug} className="card-project" href={`/projekte/${slug}`}>
+                  <div className="img">
+                    <Image src={projectImages[slug]} alt={m.title} fill style={{objectFit:'cover'}} sizes="(max-width:768px) 100vw, 33vw" />
+                  </div>
+                  <div className="body">
+                    <div className="meta-row"><span>{m.type}</span><span>{m.year}</span></div>
+                    <h3>{m.title}</h3>
+                    <div className="facts">
+                      <div><b>{m.area}</b>Fläche</div>
+                      <div><b>{m.dur}</b>Bauzeit</div>
+                      <div><b>{m.trades}</b>Gewerke</div>
+                    </div>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+          <p style={{ marginTop: '2rem' }}>
+            <Link className="btn btn-dark" href="/projekte">Alle Projekte ansehen <span className="arrow">→</span></Link>
+          </p>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="section green">
+        <div className="wrap">
+          <div className="section-head">
+            <span className="kicker">Kundenstimmen</span>
+            <h2>Das sagen unsere Kunden.</h2>
+            <p>4,3 von 5 Sternen aus 40 Google-Bewertungen.</p>
+          </div>
+          <TestimonialsSlider />
+        </div>
+      </section>
+
+      {/* EINZUGSGEBIET */}
+      <section className="section alt">
+        <div className="wrap">
+          <div className="region-split">
+            <div>
+              <span className="kicker">Einzugsgebiet</span>
+              <h2>In Südbaden zu Hause.</h2>
+              <p style={{ color: 'var(--slate)', marginTop: '1rem', lineHeight: 1.7, marginBottom: '2rem' }}>
+                Von Freiburg bis Rheinfelden — UBB ist Ihr regionaler Fachbetrieb für Sanierung, Umbau und Innenausbau im Breisgau und Markgräflerland. Kurze Wege, schnelle Reaktionszeiten.
+              </p>
+              <Link className="btn btn-primary" href="/standorte">Alle Standorte ansehen <span className="arrow">→</span></Link>
+            </div>
+            <div className="region-pills">
+              <Link className="region-pill" href="/standorte/freiburg"><span className="pin">▸</span>Freiburg i.B.<span className="plz">79098</span></Link>
+              <Link className="region-pill" href="/standorte/muellheim"><span className="pin">▸</span>Müllheim<span className="plz">79379</span></Link>
+              <Link className="region-pill" href="/standorte/buggingen"><span className="pin">▸</span>Buggingen<span className="plz">79426</span></Link>
+              <Link className="region-pill" href="/standorte/bad-krozingen"><span className="pin">▸</span>Bad Krozingen<span className="plz">79189</span></Link>
+              <Link className="region-pill" href="/standorte/breisach"><span className="pin">▸</span>Breisach<span className="plz">79206</span></Link>
+              <Link className="region-pill" href="/standorte/loerrach"><span className="pin">▸</span>Lörrach<span className="plz">79539</span></Link>
+              <Link className="region-pill" href="/standorte/rheinfelden"><span className="pin">▸</span>Rheinfelden<span className="plz">79618</span></Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PROZESS */}
+      <section className="section alt">
+        <div className="wrap">
+          <div className="section-head">
+            <span className="kicker">Ablauf</span>
+            <h2>Von der Anfrage bis zur Schlüsselübergabe.</h2>
+            <p>Klar strukturiert — damit Sie wissen, was als nächstes passiert.</p>
+          </div>
+          <div className="process">
+            <div className="step-card">
+              <h3>01 — Bestandsaufnahme</h3>
+              <p>Kostenloser Ortstermin — wir besichtigen das Objekt, hören zu und erfassen den Ist-Zustand. Kein Verkaufsgespräch, nur Fakten.</p>
+            </div>
+            <div className="step-card">
+              <h3>02 — Detailangebot</h3>
+              <p>Transparentes Festpreisangebot mit Leistungsbeschreibung, Zeitplan und Materialangaben. Sie wissen genau, was Sie bekommen.</p>
+            </div>
+            <div className="step-card">
+              <h3>03 — Bauausführung</h3>
+              <p>Pünktlicher Baubeginn, tägliche Koordination aller Gewerke, regelmäßige Updates. Ihr Ansprechpartner ist immer erreichbar.</p>
+            </div>
+            <div className="step-card">
+              <h3>04 — Abnahme & Übergabe</h3>
+              <p>Gemeinsame Begehung, Fotodokumentation, Abnahmeprotokoll. Erst wenn Sie zufrieden sind, ist das Projekt abgeschlossen.</p>
+            </div>
+          </div>
+          <p style={{ marginTop: '2rem' }}>
+            <Link className="btn btn-dark" href="/anfrage">Jetzt Bestandsaufnahme anfragen <span className="arrow">→</span></Link>
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section">
+        <div className="wrap">
+          <div className="section-head">
+            <span className="kicker">FAQ</span>
+            <h2>Häufig gestellte Fragen.</h2>
+          </div>
+          <div className="faq">
+            <details open>
+              <summary>Warum UBB für mein Bauvorhaben wählen?</summary>
+              <div className="a">Alles aus einer Hand — von Estrich bis Stuck. Ein Ansprechpartner koordiniert alle Gewerke, inklusive Partnerfirmen für Elektro und Sanitär. Das erspart Ihnen die Koordination mehrerer Betriebe und minimiert Reibungsverluste.</div>
+            </details>
+            <details>
+              <summary>Kann UBB mein Projekt zeit- und budgetgerecht realisieren?</summary>
+              <div className="a">Realistischer Plan vor Baustart, klare Kommunikation während der Bauphase, Abschluss im vereinbarten Rahmen. Seit 2010 arbeiten wir nach diesem Prinzip — und unsere Bewertungen spiegeln das wider.</div>
+            </details>
+            <details>
+              <summary>Wie weit im Voraus muss ich anfragen?</summary>
+              <div className="a">Je früher, desto besser — gerade für größere Projekte. Für kleinere Arbeiten haben wir oft kurzfristig Kapazitäten. Kontaktieren Sie uns unverbindlich, wir besprechen die Terminlage.</div>
+            </details>
+            <details>
+              <summary>Führt UBB auch nur einzelne Gewerke aus?</summary>
+              <div className="a">Ja — auch wenn Sie nur Estricharbeiten, Trockenbau oder Malerarbeiten benötigen, helfen wir Ihnen. Unsere Stärke liegt aber in der Koordination mehrerer Gewerke aus einer Hand.</div>
+            </details>
+            <details>
+              <summary>Arbeitet UBB auch für Privatkunden?</summary>
+              <div className="a">Ja — vom Eigenheim über Eigentumswohnungen bis zu Mietobjekten und Gewerbeflächen. Unsere Kunden reichen von Privatpersonen über Hausverwaltungen bis zu Gewerbetreibenden.</div>
+            </details>
+            <details>
+              <summary>In welchem Gebiet ist UBB tätig?</summary>
+              <div className="a">Unser Kerngebiet ist Südbaden: Freiburg, Müllheim, Buggingen, Bad Krozingen, Breisach, Lörrach und Rheinfelden. Für größere Projekte sind wir auch darüber hinaus tätig — fragen Sie uns einfach an.</div>
+            </details>
+            <details>
+              <summary>Wie nachhaltig arbeitet UBB?</summary>
+              <div className="a">Langlebigkeit ist die nachhaltigste Bauweise. Wir verwenden schadstoffarme Materialien, minimieren Abfall durch sorgfältige Planung und dokumentieren jedes Projekt — für Transparenz gegenüber Auftraggeber und Behörden.</div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="cta-band">
+        <div className="wrap inner">
+          <h2>Bereit für Ihr <em>Projekt</em>?</h2>
+          <div className="actions">
+            <Link className="btn btn-white" href="/anfrage">Projektanfrage starten <span className="arrow">→</span></Link>
+            <a className="btn btn-outline-light" href="tel:+4976311730287">+49 7631 1730287</a>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
