@@ -82,12 +82,23 @@ export default function DatenschutzPage() {
             Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Diese Daten werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO erhoben. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Optimierung seiner Website.
           </p>
 
-          <h2>5. Fonts</h2>
+          <h2>5. Cookies</h2>
+          <p>
+            Diese Website verwendet ausschließlich technisch notwendige Cookies. Es werden keine Tracking-, Analyse- oder Werbe-Cookies eingesetzt.
+          </p>
+          <p>
+            Beim ersten Besuch erscheint ein Cookie-Hinweisbanner. Ihre Entscheidung (Akzeptieren oder Ablehnen) wird in Ihrem Browser unter dem Schlüssel <code>ubb_cookie_consent</code> im lokalen Speicher (localStorage) festgehalten. Dieser Eintrag enthält keine personenbezogenen Daten und wird nicht an Server übertragen. Sie können ihn jederzeit über die Entwicklertools Ihres Browsers löschen, woraufhin der Hinweis beim nächsten Besuch erneut erscheint.
+          </p>
+          <p>
+            Rechtsgrundlage für die Verwendung technisch notwendiger Cookies ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am technischen Betrieb der Website).
+          </p>
+
+          <h2>6. Fonts</h2>
           <p>
             Diese Website verwendet Schriftarten, die beim Abruf der Seite lokal ausgeliefert werden (self-hosted). Es werden keine Anfragen an externe Font-Server gesendet.
           </p>
 
-          <h2>6. Ihre Rechte</h2>
+          <h2>7. Ihre Rechte</h2>
           <p>Sie haben jederzeit das Recht auf:</p>
           <ul>
             <li>Auskunft über Ihre bei uns gespeicherten personenbezogenen Daten (Art. 15 DSGVO)</li>

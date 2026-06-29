@@ -61,10 +61,19 @@ export default function EnPrivacyPage() {
           <h3>Server log files</h3>
           <p>The provider of the pages automatically collects and stores information in so-called server log files, which your browser automatically transmits to us. These are: browser type and browser version, operating system used, referrer URL, hostname of the accessing computer, time of the server request, IP address.</p>
 
-          <h2>5. Fonts</h2>
+          <h2>5. Cookies</h2>
+          <p>This website uses technically necessary cookies only. No tracking, analytics, or advertising cookies are used.</p>
+          <p>
+            On your first visit, a cookie notice banner is shown. Your choice (Accept or Decline) is stored in your browser under the key <code>ubb_cookie_consent</code> in localStorage. This entry contains no personal data and is not transmitted to any server. You can delete it at any time via your browser's developer tools, which will cause the banner to reappear on your next visit.
+          </p>
+          <p>
+            The legal basis for technically necessary cookies is Art. 6 para. 1 lit. f GDPR (legitimate interest in the technical operation of the website).
+          </p>
+
+          <h2>6. Fonts</h2>
           <p>This website uses fonts that are delivered locally when the page is accessed (self-hosted). No requests are sent to external font servers.</p>
 
-          <h2>6. Your rights</h2>
+          <h2>7. Your rights</h2>
           <p>You have the right at any time to:</p>
           <ul>
             <li>Access information about your personal data stored with us (Art. 15 GDPR)</li>
