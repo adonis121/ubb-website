@@ -10,6 +10,20 @@ export const metadata: Metadata = {
   description: 'Kernsanierung, Umbau und Innenausbau aus einer Hand. Seit 2010 in Freiburg, Müllheim und Südbaden. 15 Fachleute · 4,3★ · Ein Ansprechpartner.',
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Warum UBB für mein Bauvorhaben wählen?', acceptedAnswer: { '@type': 'Answer', text: 'Alles aus einer Hand — von Estrich bis Stuck. Ein Ansprechpartner koordiniert alle Gewerke, inklusive Partnerfirmen für Elektro und Sanitär. Das erspart Ihnen die Koordination mehrerer Betriebe und minimiert Reibungsverluste.' } },
+    { '@type': 'Question', name: 'Kann UBB mein Projekt zeit- und budgetgerecht realisieren?', acceptedAnswer: { '@type': 'Answer', text: 'Realistischer Plan vor Baustart, klare Kommunikation während der Bauphase, Abschluss im vereinbarten Rahmen. Seit 2010 arbeiten wir nach diesem Prinzip — und unsere Bewertungen spiegeln das wider.' } },
+    { '@type': 'Question', name: 'Wie weit im Voraus muss ich anfragen?', acceptedAnswer: { '@type': 'Answer', text: 'Je früher, desto besser — gerade für größere Projekte. Für kleinere Arbeiten haben wir oft kurzfristig Kapazitäten. Kontaktieren Sie uns unverbindlich, wir besprechen die Terminlage.' } },
+    { '@type': 'Question', name: 'Führt UBB auch nur einzelne Gewerke aus?', acceptedAnswer: { '@type': 'Answer', text: 'Ja — auch wenn Sie nur Estricharbeiten, Trockenbau oder Malerarbeiten benötigen, helfen wir Ihnen. Unsere Stärke liegt aber in der Koordination mehrerer Gewerke aus einer Hand.' } },
+    { '@type': 'Question', name: 'Arbeitet UBB auch für Privatkunden?', acceptedAnswer: { '@type': 'Answer', text: 'Ja — vom Eigenheim über Eigentumswohnungen bis zu Mietobjekten und Gewerbeflächen. Unsere Kunden reichen von Privatpersonen über Hausverwaltungen bis zu Gewerbetreibenden.' } },
+    { '@type': 'Question', name: 'In welchem Gebiet ist UBB tätig?', acceptedAnswer: { '@type': 'Answer', text: 'Unser Kerngebiet ist Südbaden: Freiburg, Müllheim, Buggingen, Bad Krozingen, Breisach, Lörrach und Rheinfelden. Für größere Projekte sind wir auch darüber hinaus tätig — fragen Sie uns einfach an.' } },
+    { '@type': 'Question', name: 'Wie nachhaltig arbeitet UBB?', acceptedAnswer: { '@type': 'Answer', text: 'Langlebigkeit ist die nachhaltigste Bauweise. Wir verwenden schadstoffarme Materialien, minimieren Abfall durch sorgfältige Planung und dokumentieren jedes Projekt — für Transparenz gegenüber Auftraggeber und Behörden.' } },
+  ],
+}
+
 export default function HomePage() {
   return (
     <>
@@ -307,6 +321,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
     </>
   )
 }

@@ -78,10 +78,25 @@ export const metadata: Metadata = {
   description: 'Kernsanierung, Umbau und Innenausbau aus einer Hand. Seit 2010 in Freiburg, Müllheim und Südbaden. 15 Fachleute · 4,3★ · Ein Ansprechpartner.',
   keywords: ['Bausanierung', 'Kernsanierung', 'Umbau', 'Innenausbau', 'Freiburg', 'Südbaden', 'Estrich', 'Trockenbau'],
   metadataBase: new URL('https://www.ubb-bausanierung.de'),
+  alternates: {
+    languages: {
+      'de': 'https://www.ubb-bausanierung.de',
+      'en': 'https://www.ubb-bausanierung.de/en',
+      'x-default': 'https://www.ubb-bausanierung.de',
+    },
+  },
   openGraph: {
     siteName: 'UBB Bausanierung GmbH',
     locale: 'de_DE',
     type: 'website',
+    images: [{
+      url: '/images/ffnen_Sie_die_Tr_zu_Ihrem_nchsten_Bauprojekt_.jpeg',
+      alt: 'UBB Bausanierung GmbH — Sanierung, Umbau & Innenausbau in Südbaden',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/ffnen_Sie_die_Tr_zu_Ihrem_nchsten_Bauprojekt_.jpeg'],
   },
 }
 
