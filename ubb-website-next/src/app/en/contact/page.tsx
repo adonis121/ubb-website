@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import ContactForm from '@/components/ContactForm'
+import EnContactForm from '@/components/EnContactForm'
 import MapEmbed from '@/components/MapEmbed'
 
 export const metadata: Metadata = {
@@ -24,7 +24,7 @@ export default function EnContactPage() {
 
       <section className="section">
         <div className="wrap two-col">
-          <ContactForm />
+          <EnContactForm />
           <aside className="contact-aside">
             <h3>Prefer to speak directly?</h3>
             <div className="row">
