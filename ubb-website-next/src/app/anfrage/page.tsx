@@ -57,10 +57,12 @@ export default function AnfragePage() {
 
       <section className="section alt">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Firmensitz</span>
-            <h2>Wo Sie uns finden.</h2>
-            <p>Biergasse 1 · 79426 Buggingen · Mo–Fr 7:00–17:00 Uhr</p>
+            <div>
+              <h2>Wo Sie uns finden.</h2>
+              <p>Biergasse 1 · 79426 Buggingen · Mo–Fr 7:00–17:00 Uhr</p>
+            </div>
           </div>
           <MapEmbed />
         </div>

@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -53,7 +53,14 @@ function toDeUrl(p: string): string {
 
 export default function Header() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
   const isEn = pathname.startsWith('/en')
 
   const navLinks = isEn ? enLinks : deLinks
@@ -62,7 +69,7 @@ export default function Header() {
   const enUrl = isEn ? pathname : toEnUrl(pathname)
 
   return (
-    <header className="site-header">
+    <header className={`site-header${scrolled ? ' scrolled' : ''}`}>
       <div className="bar">
         <Link className="logo" href={isEn ? '/en' : '/'} onClick={() => setOpen(false)}>
           <Image

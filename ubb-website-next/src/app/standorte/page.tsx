@@ -25,9 +25,9 @@ export default function StandortePage() {
 
       <section className="section">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">7 Städte</span>
-            <h2>Unsere Einsatzgebiete.</h2>
+            <div><h2>Unsere Einsatzgebiete.</h2></div>
           </div>
           <div className="grid cols-3">
             {cities.map((c) => (
@@ -46,9 +46,9 @@ export default function StandortePage() {
 
       <section className="section alt">
         <div className="wrap inner-narrow">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Einzugsgebiet</span>
-            <h2>Nicht dabei? Wir kommen trotzdem.</h2>
+            <div><h2>Nicht dabei? Wir kommen trotzdem.</h2></div>
           </div>
           <p>Unser Kerngebiet umfasst den Breisgau und das Markgräflerland. Für größere Projekte fahren wir auch darüber hinaus — sprechen Sie uns an.</p>
           <div className="actions" style={{ marginTop: '2rem' }}>

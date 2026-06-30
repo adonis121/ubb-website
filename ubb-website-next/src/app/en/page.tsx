@@ -3,7 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import BeforeAfterSlider from '@/components/BeforeAfterSlider'
 import TestimonialsSlider from '@/components/TestimonialsSlider'
-import { heroImage, projectImages, serviceImages } from '@/data/imageMap'
+import EnHeroSlider from '@/components/EnHeroSlider'
+import { projectImages, serviceImages } from '@/data/imageMap'
 
 export const metadata: Metadata = {
   title: 'UBB Bausanierung | Building Renovation & Interior Fit-Out in Southern Baden',
@@ -14,88 +15,50 @@ export default function EnglishHomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="hero">
-        <div className="hero-bg">
-          <Image src={heroImage} alt="UBB Bausanierung — interior fit-out" fill priority />
-        </div>
-        <div className="hero-overlay" />
-        <div className="wrap hero-wrap">
-          <div className="hero-content">
-            <span className="kicker">Building Renovation · Southern Baden · since 2010</span>
-            <h1>Substance that <em>lasts</em> generations.</h1>
-            <p className="lede">Full-scope renovation, conversion and interior fit-out from a single source. One contact person, 15 specialists, one standard: yours.</p>
-            <div className="hero-ctas">
-              <Link className="btn btn-primary" href="/en/contact">Start a project inquiry <span className="arrow">→</span></Link>
-              <Link className="btn btn-outline-light" href="/en/projects">View projects</Link>
-            </div>
-          </div>
-          <div className="hero-panel">
-            <div className="stat"><b>15+</b><span>Years experience</span></div>
-            <div className="stat"><b>15</b><span>Specialists</span></div>
-            <div className="stat"><b>4.3★</b><span>Google reviews</span></div>
-            <div className="stat"><b>7</b><span>Locations</span></div>
-          </div>
-        </div>
-      </section>
+      <EnHeroSlider />
 
       {/* SERVICES */}
       <section className="section">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Services</span>
-            <h2>Everything from one source. One contact.</h2>
-            <p>Three service areas, all trades coordinated — including partner firms for electrical and plumbing.</p>
+            <div>
+              <h2>Everything from one source. One contact.</h2>
+              <p>Three service areas, all trades coordinated — including partner firms for electrical and plumbing.</p>
+            </div>
           </div>
-          <div className="grid cols-3">
-            <Link className="card-service" href="/en/renovation">
-              {serviceImages['sanierung-umbau'] && (
-                <div className="card-service-thumb">
-                  <Image src={serviceImages['sanierung-umbau']} alt="Renovation & Conversion" fill sizes="(max-width:768px) 100vw, 33vw" />
-                </div>
-              )}
-              <div className="card-service-body">
-                <span className="num">01 —</span>
-                <h3>Renovation & Conversion</h3>
+          <div className="service-list">
+            <Link className="service-row" href="/en/renovation">
+              <span className="sr-num">01</span>
+              <div className="sr-body">
+                <h3>Renovation &amp; Conversion</h3>
                 <p>From core renovation to demolition: we bring existing buildings back to their best.</p>
-                <div className="tags">
-                  <span className="tag-chip">Core Renovation</span>
-                  <span className="tag-chip">Conversion</span>
-                  <span className="tag-chip">Demolition</span>
-                </div>
+                <span className="sr-cta">Learn more →</span>
+              </div>
+              <div className="sr-image">
+                <Image src={serviceImages['sanierung-umbau']} alt="Renovation & Conversion" fill style={{objectFit:'cover'}} sizes="40vw" />
               </div>
             </Link>
-            <Link className="card-service" href="/en/flooring">
-              {serviceImages['bodenarbeiten'] && (
-                <div className="card-service-thumb">
-                  <Image src={serviceImages['bodenarbeiten']} alt="Floor Works" fill sizes="(max-width:768px) 100vw, 33vw" />
-                </div>
-              )}
-              <div className="card-service-body">
-                <span className="num">02 —</span>
+            <Link className="service-row" href="/en/flooring">
+              <span className="sr-num">02</span>
+              <div className="sr-body">
                 <h3>Floor Works</h3>
                 <p>Screed, coatings, tiles and micro-cement — floors built to last decades, not years.</p>
-                <div className="tags">
-                  <span className="tag-chip">Screed</span>
-                  <span className="tag-chip">Coatings</span>
-                  <span className="tag-chip">Tiling</span>
-                </div>
+                <span className="sr-cta">Learn more →</span>
+              </div>
+              <div className="sr-image">
+                <Image src={serviceImages['bodenarbeiten']} alt="Floor Works" fill style={{objectFit:'cover'}} sizes="40vw" />
               </div>
             </Link>
-            <Link className="card-service" href="/en/interior">
-              {serviceImages['innenarbeiten'] && (
-                <div className="card-service-thumb">
-                  <Image src={serviceImages['innenarbeiten']} alt="Interior Works" fill sizes="(max-width:768px) 100vw, 33vw" />
-                </div>
-              )}
-              <div className="card-service-body">
-                <span className="num">03 —</span>
+            <Link className="service-row" href="/en/interior">
+              <span className="sr-num">03</span>
+              <div className="sr-body">
                 <h3>Interior Works</h3>
                 <p>Drylining, plastering, stucco and painting — precise interior fit-out to the last detail.</p>
-                <div className="tags">
-                  <span className="tag-chip">Drylining</span>
-                  <span className="tag-chip">Plastering</span>
-                  <span className="tag-chip">Painting</span>
-                </div>
+                <span className="sr-cta">Learn more →</span>
+              </div>
+              <div className="sr-image">
+                <Image src={serviceImages['innenarbeiten']} alt="Interior Works" fill style={{objectFit:'cover'}} sizes="40vw" />
               </div>
             </Link>
           </div>
@@ -105,10 +68,12 @@ export default function EnglishHomePage() {
       {/* BEFORE / AFTER */}
       <section className="section alt">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Reference project</span>
-            <h2>See the difference.</h2>
-            <p>Multi-family house, Freiburg — core renovation, 420 m², 14 weeks. Drag the slider.</p>
+            <div>
+              <h2>See the difference.</h2>
+              <p>Multi-family house, Freiburg — core renovation, 420 m², 14 weeks. Drag the slider.</p>
+            </div>
           </div>
           <BeforeAfterSlider />
           <p style={{ marginTop: '1rem' }}>
@@ -120,9 +85,9 @@ export default function EnglishHomePage() {
       {/* WHY UBB */}
       <section className="section dark" id="about">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Why UBB</span>
-            <h2>We don't promise what we can't deliver.</h2>
+            <div><h2>We don't promise what we can't deliver.</h2></div>
           </div>
           <div className="grid cols-3">
             <div className="value">
@@ -156,11 +121,11 @@ export default function EnglishHomePage() {
       {/* PROJECTS */}
       <section className="section">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Projects</span>
-            <h2>Work that speaks for itself.</h2>
+            <div><h2>Work that speaks for itself.</h2></div>
           </div>
-          <div className="grid cols-3">
+          <div className="projects-bento">
             {([
               { slug: 'mfh-freiburg',              type: 'Core Renovation', year: '2025', title: 'Multi-family house, Freiburg',    area: '420 m²', dur: '14 wks', trades: '6' },
               { slug: 'gewerbehalle-muellheim',     type: 'Screed Works',    year: '2025', title: 'Industrial hall, Müllheim',       area: '850 m²', dur: '3 wks',  trades: '2' },
@@ -168,7 +133,7 @@ export default function EnglishHomePage() {
             ] as const).map((p) => (
               <Link key={p.slug} className="card-project" href={`/en/projects/${p.slug}`}>
                 <div className="img">
-                  <Image src={projectImages[p.slug]} alt={p.title} fill style={{ objectFit: 'cover' }} sizes="(max-width:768px) 100vw, 33vw" />
+                  <Image src={projectImages[p.slug]} alt={p.title} fill style={{ objectFit: 'cover' }} sizes="(max-width:560px) 100vw, (max-width:860px) 50vw, (max-width:1200px) 67vw, 800px" />
                 </div>
                 <div className="body">
                   <div className="meta-row"><span>{p.type}</span><span>{p.year}</span></div>
@@ -191,10 +156,12 @@ export default function EnglishHomePage() {
       {/* TESTIMONIALS */}
       <section className="section green">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Reviews</span>
-            <h2>What our clients say.</h2>
-            <p>4.3 out of 5 stars from 40 Google reviews.</p>
+            <div>
+              <h2>What our clients say.</h2>
+              <p>4.3 out of 5 stars from 40 Google reviews.</p>
+            </div>
           </div>
           <TestimonialsSlider />
         </div>
@@ -203,10 +170,12 @@ export default function EnglishHomePage() {
       {/* PROCESS */}
       <section className="section alt">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Process</span>
-            <h2>From enquiry to handover.</h2>
-            <p>Clearly structured — so you always know what happens next.</p>
+            <div>
+              <h2>From enquiry to handover.</h2>
+              <p>Clearly structured — so you always know what happens next.</p>
+            </div>
           </div>
           <div className="process">
             <div className="step-card">
@@ -260,9 +229,9 @@ export default function EnglishHomePage() {
       {/* FAQ */}
       <section className="section">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">FAQ</span>
-            <h2>Frequently asked questions.</h2>
+            <div><h2>Frequently asked questions.</h2></div>
           </div>
           <div className="faq">
             <details open>

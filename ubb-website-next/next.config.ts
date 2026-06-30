@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     root: __dirname,
   },
   images: {
-    formats: ['image/avif', 'image/webp'],
+    formats: ['image/webp'],
     minimumCacheTTL: 2592000,
   },
   async headers() {

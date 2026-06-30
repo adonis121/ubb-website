@@ -3,7 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import BeforeAfterSlider from '@/components/BeforeAfterSlider'
 import TestimonialsSlider from '@/components/TestimonialsSlider'
-import { heroImage, serviceImages, projectImages } from '@/data/imageMap'
+import HeroSlider from '@/components/HeroSlider'
+import { serviceImages, projectImages } from '@/data/imageMap'
 
 export const metadata: Metadata = {
   title: 'UBB Bausanierung GmbH | Sanierung, Umbau & Innenausbau in Südbaden',
@@ -27,85 +28,50 @@ const faqSchema = {
 export default function HomePage() {
   return (
     <>
-      {/* HERO */}
-      <section className="hero">
-        <div className="hero-bg">
-          <Image src={heroImage} alt="UBB Bausanierung — Innenausbau" fill priority />
-        </div>
-        <div className="hero-overlay" />
-        <div className="wrap hero-wrap">
-          <div className="hero-content">
-            <span className="kicker">Bausanierung · Südbaden · seit 2010</span>
-            <h1>Substanz, die <em>Generationen</em> überdauert.</h1>
-            <p className="lede">Kernsanierung, Umbau und Innenausbau aus einer Hand. Ein Ansprechpartner, 15 Fachleute, ein Standard: Ihrer.</p>
-            <div className="hero-ctas">
-              <Link className="btn btn-primary" href="/anfrage">Projektanfrage starten <span className="arrow">→</span></Link>
-              <Link className="btn btn-outline-light" href="/projekte">Projekte ansehen</Link>
-            </div>
-          </div>
-          <div className="hero-panel">
-            <div className="stat"><b>15+</b><span>Jahre Erfahrung</span></div>
-            <div className="stat"><b>15</b><span>Fachleute im Team</span></div>
-            <div className="stat"><b>4,3★</b><span>Google-Bewertungen</span></div>
-            <div className="stat"><b>7</b><span>Standorte</span></div>
-          </div>
-        </div>
-      </section>
+      <HeroSlider />
 
       {/* LEISTUNGEN */}
       <section className="section">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Leistungen</span>
-            <h2>Alles aus einer Hand. Ein Ansprechpartner.</h2>
-            <p>Drei Leistungsbereiche, alle Gewerke koordiniert — inklusive Partnerfirmen für Elektro und Sanitär.</p>
+            <div>
+              <h2>Alles aus einer Hand. Ein Ansprechpartner.</h2>
+              <p>Drei Leistungsbereiche, alle Gewerke koordiniert — inklusive Partnerfirmen für Elektro und Sanitär.</p>
+            </div>
           </div>
-          <div className="grid cols-3">
-            <Link className="card-service" href="/sanierung-umbau">
-              <div className="card-service-thumb">
-                <Image src={serviceImages['sanierung-umbau']} alt="Sanierung & Umbau" fill sizes="(max-width:768px) 100vw, 33vw" />
-              </div>
-              <div className="card-service-body">
-                <span className="num">01 —</span>
+          <div className="service-list">
+            <Link className="service-row" href="/sanierung-umbau">
+              <span className="sr-num">01</span>
+              <div className="sr-body">
                 <h3>Sanierung &amp; Umbau</h3>
                 <p>Von der Kernsanierung bis zum Abbruch: Wir bringen Bestandsgebäude in ihre beste Form.</p>
-                <div className="tags">
-                  <span className="tag-chip">Bausanierung</span>
-                  <span className="tag-chip">Kernsanierung</span>
-                  <span className="tag-chip">Umbau</span>
-                  <span className="tag-chip">Abbruch</span>
-                </div>
+                <span className="sr-cta">Mehr erfahren →</span>
+              </div>
+              <div className="sr-image">
+                <Image src={serviceImages['sanierung-umbau']} alt="Sanierung & Umbau" fill style={{objectFit:'cover'}} sizes="40vw" />
               </div>
             </Link>
-            <Link className="card-service" href="/bodenarbeiten">
-              <div className="card-service-thumb">
-                <Image src={serviceImages['bodenarbeiten']} alt="Bodenarbeiten" fill sizes="(max-width:768px) 100vw, 33vw" />
-              </div>
-              <div className="card-service-body">
-                <span className="num">02 —</span>
+            <Link className="service-row" href="/bodenarbeiten">
+              <span className="sr-num">02</span>
+              <div className="sr-body">
                 <h3>Bodenarbeiten</h3>
                 <p>Estrich, Beschichtung, Fliesen und Spachteltechnik — Böden für Jahrzehnte, nicht Jahre.</p>
-                <div className="tags">
-                  <span className="tag-chip">Estrich</span>
-                  <span className="tag-chip">Beschichtung</span>
-                  <span className="tag-chip">Fliesen</span>
-                  <span className="tag-chip">Spachteltechnik</span>
-                </div>
+                <span className="sr-cta">Mehr erfahren →</span>
+              </div>
+              <div className="sr-image">
+                <Image src={serviceImages['bodenarbeiten']} alt="Bodenarbeiten" fill style={{objectFit:'cover'}} sizes="40vw" />
               </div>
             </Link>
-            <Link className="card-service" href="/innenarbeiten">
-              <div className="card-service-thumb">
-                <Image src={serviceImages['innenarbeiten']} alt="Innenarbeiten" fill sizes="(max-width:768px) 100vw, 33vw" />
-              </div>
-              <div className="card-service-body">
-                <span className="num">03 —</span>
+            <Link className="service-row" href="/innenarbeiten">
+              <span className="sr-num">03</span>
+              <div className="sr-body">
                 <h3>Innenarbeiten</h3>
                 <p>Trockenbau, Putz, Stuck und Malerarbeiten — präziser Innenausbau bis ins Detail.</p>
-                <div className="tags">
-                  <span className="tag-chip">Trockenbau</span>
-                  <span className="tag-chip">Putz &amp; Stuck</span>
-                  <span className="tag-chip">Maler</span>
-                </div>
+                <span className="sr-cta">Mehr erfahren →</span>
+              </div>
+              <div className="sr-image">
+                <Image src={serviceImages['innenarbeiten']} alt="Innenarbeiten" fill style={{objectFit:'cover'}} sizes="40vw" />
               </div>
             </Link>
           </div>
@@ -115,10 +81,12 @@ export default function HomePage() {
       {/* REFERENZPROJEKT */}
       <section className="section alt">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Referenzprojekt</span>
-            <h2>Sehen Sie den Unterschied.</h2>
-            <p>Mehrfamilienhaus Freiburg — Kernsanierung, 420 m², 14 Wochen. Ziehen Sie den Regler.</p>
+            <div>
+              <h2>Sehen Sie den Unterschied.</h2>
+              <p>Mehrfamilienhaus Freiburg — Kernsanierung, 420 m², 14 Wochen. Ziehen Sie den Regler.</p>
+            </div>
           </div>
           <BeforeAfterSlider />
           <p style={{ marginTop: '1rem' }}>
@@ -130,9 +98,9 @@ export default function HomePage() {
       {/* WARUM UBB */}
       <section className="section dark" id="ueber-uns">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Warum UBB</span>
-            <h2>Wir versprechen nichts, was wir nicht halten.</h2>
+            <div><h2>Wir versprechen nichts, was wir nicht halten.</h2></div>
           </div>
           <div className="grid cols-3">
             <div className="value">
@@ -166,11 +134,11 @@ export default function HomePage() {
       {/* PROJEKTE */}
       <section className="section">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Projekte</span>
-            <h2>Arbeit, die für sich spricht.</h2>
+            <div><h2>Arbeit, die für sich spricht.</h2></div>
           </div>
-          <div className="grid cols-3">
+          <div className="projects-bento">
             {(['mfh-freiburg','gewerbehalle-muellheim','praxisumbau-bad-krozingen'] as const).map((slug) => {
               const meta: Record<string, {type:string;year:string;title:string;area:string;dur:string;trades:string}> = {
                 'mfh-freiburg':              {type:'Kernsanierung',year:'2025',title:'Mehrfamilienhaus, Freiburg',      area:'420 m²',dur:'14 Wo.',trades:'6'},
@@ -181,7 +149,7 @@ export default function HomePage() {
               return (
                 <Link key={slug} className="card-project" href={`/projekte/${slug}`}>
                   <div className="img">
-                    <Image src={projectImages[slug]} alt={m.title} fill style={{objectFit:'cover'}} sizes="(max-width:768px) 100vw, 33vw" />
+                    <Image src={projectImages[slug]} alt={m.title} fill style={{objectFit:'cover'}} sizes="(max-width:560px) 100vw, (max-width:860px) 50vw, (max-width:1200px) 67vw, 800px" />
                   </div>
                   <div className="body">
                     <div className="meta-row"><span>{m.type}</span><span>{m.year}</span></div>
@@ -205,10 +173,12 @@ export default function HomePage() {
       {/* TESTIMONIALS */}
       <section className="section green">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Kundenstimmen</span>
-            <h2>Das sagen unsere Kunden.</h2>
-            <p>4,3 von 5 Sternen aus 40 Google-Bewertungen.</p>
+            <div>
+              <h2>Das sagen unsere Kunden.</h2>
+              <p>4,3 von 5 Sternen aus 40 Google-Bewertungen.</p>
+            </div>
           </div>
           <TestimonialsSlider />
         </div>
@@ -242,10 +212,12 @@ export default function HomePage() {
       {/* PROZESS */}
       <section className="section alt">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Ablauf</span>
-            <h2>Von der Anfrage bis zur Schlüsselübergabe.</h2>
-            <p>Klar strukturiert — damit Sie wissen, was als nächstes passiert.</p>
+            <div>
+              <h2>Von der Anfrage bis zur Schlüsselübergabe.</h2>
+              <p>Klar strukturiert — damit Sie wissen, was als nächstes passiert.</p>
+            </div>
           </div>
           <div className="process">
             <div className="step-card">
@@ -274,9 +246,9 @@ export default function HomePage() {
       {/* FAQ */}
       <section className="section">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">FAQ</span>
-            <h2>Häufig gestellte Fragen.</h2>
+            <div><h2>Häufig gestellte Fragen.</h2></div>
           </div>
           <div className="faq">
             <details open>

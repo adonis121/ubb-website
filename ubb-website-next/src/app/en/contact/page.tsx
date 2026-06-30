@@ -57,10 +57,12 @@ export default function EnContactPage() {
 
       <section className="section alt">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Our location</span>
-            <h2>Where to find us.</h2>
-            <p>Biergasse 1 · 79426 Buggingen · Mon–Fri 7:00–17:00</p>
+            <div>
+              <h2>Where to find us.</h2>
+              <p>Biergasse 1 · 79426 Buggingen · Mon–Fri 7:00–17:00</p>
+            </div>
           </div>
           <MapEmbed lang="en" />
         </div>

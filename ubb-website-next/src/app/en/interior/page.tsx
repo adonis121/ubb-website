@@ -22,7 +22,7 @@ export default function EnInteriorPage() {
             <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
               <Image src={serviceImages['innenarbeiten']} alt={cat.title} fill style={{ objectFit: 'cover', objectPosition: 'center' }} priority />
             </div>
-            <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(135deg, rgba(13,27,42,.88) 0%, rgba(13,27,42,.65) 100%)' }} />
+            <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to right, rgba(71,69,72,.97) 0%, rgba(71,69,72,.82) 48%, rgba(71,69,72,.18) 100%)' }} />
           </>
         )}
         <div className="wrap" style={{ position: 'relative', zIndex: 2 }}>
@@ -35,7 +35,10 @@ export default function EnInteriorPage() {
 
       <section className="section">
         <div className="wrap">
-          <div className="section-head"><span className="kicker">Services</span><h2>Four trades for a perfect fit-out.</h2></div>
+          <div className="section-head section-head-v">
+            <span className="kicker">Services</span>
+            <div><h2>Four trades for a perfect fit-out.</h2></div>
+          </div>
           <div className="service-feat-list">
             {cat.subServices.map((s) => (
               <Link key={s.slug} className="service-feat-row" href={`/en/interior/${s.slug}`}>
@@ -59,7 +62,10 @@ export default function EnInteriorPage() {
 
       <section className="section alt">
         <div className="wrap">
-          <div className="section-head"><span className="kicker">Process</span><h2>How your interior fit-out works.</h2></div>
+          <div className="section-head section-head-v">
+            <span className="kicker">Process</span>
+            <div><h2>How your interior fit-out works.</h2></div>
+          </div>
           <div className="process">
             {cat.process.map((step) => (
               <div key={step.title} className="step-card"><h3>{step.title}</h3><p>{step.description}</p></div>
@@ -71,8 +77,11 @@ export default function EnInteriorPage() {
       {relProjects.length > 0 && (
         <section className="section">
           <div className="wrap">
-            <div className="section-head"><span className="kicker">References</span><h2>Interior projects from the region.</h2></div>
-            <div className="grid cols-2">
+            <div className="section-head section-head-v">
+              <span className="kicker">References</span>
+              <div><h2>Interior projects from the region.</h2></div>
+            </div>
+            <div className="grid cols-2 projects-overlay">
               {relProjects.map((p) => (
                 <Link key={p.slug} className="card-project" href={`/en/projects/${p.slug}`}>
                   <div className="img">

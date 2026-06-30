@@ -25,9 +25,9 @@ export default function EnLocationsPage() {
 
       <section className="section">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">7 Towns</span>
-            <h2>Our service areas.</h2>
+            <div><h2>Our service areas.</h2></div>
           </div>
           <div className="grid cols-3">
             {cities.map((c) => (
@@ -46,9 +46,9 @@ export default function EnLocationsPage() {
 
       <section className="section alt">
         <div className="wrap inner-narrow">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Coverage</span>
-            <h2>Not on the list? We still come to you.</h2>
+            <div><h2>Not on the list? We still come to you.</h2></div>
           </div>
           <p>Our core territory covers the Breisgau and the Markgräflerland wine region. For larger projects we travel further afield — just get in touch.</p>
           <div className="actions" style={{ marginTop: '2rem' }}>

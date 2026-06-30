@@ -22,7 +22,7 @@ export default function BodenarbeitenPage() {
             <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
               <Image src={serviceImages['bodenarbeiten']} alt={cat.title} fill style={{ objectFit: 'cover', objectPosition: 'center' }} priority />
             </div>
-            <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(135deg, rgba(13,27,42,.88) 0%, rgba(13,27,42,.65) 100%)' }} />
+            <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to right, rgba(71,69,72,.97) 0%, rgba(71,69,72,.82) 48%, rgba(71,69,72,.18) 100%)' }} />
           </>
         )}
         <div className="wrap" style={{ position: 'relative', zIndex: 2 }}>
@@ -37,9 +37,9 @@ export default function BodenarbeitenPage() {
 
       <section className="section">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Leistungen</span>
-            <h2>Sechs Gewerke, ein Standard.</h2>
+            <div><h2>Sechs Gewerke, ein Standard.</h2></div>
           </div>
           <div className="service-feat-list">
             {cat.subServices.map((s) => (
@@ -64,9 +64,9 @@ export default function BodenarbeitenPage() {
 
       <section className="section alt">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Ablauf</span>
-            <h2>So läuft Ihr Bodenprojekt.</h2>
+            <div><h2>So läuft Ihr Bodenprojekt.</h2></div>
           </div>
           <div className="process">
             {cat.process.map((step) => (
@@ -82,11 +82,11 @@ export default function BodenarbeitenPage() {
       {relProjects.length > 0 && (
         <section className="section">
           <div className="wrap">
-            <div className="section-head">
+            <div className="section-head section-head-v">
               <span className="kicker">Referenzen</span>
-              <h2>Bodenprojekte aus der Region.</h2>
+              <div><h2>Bodenprojekte aus der Region.</h2></div>
             </div>
-            <div className="grid cols-2">
+            <div className="grid cols-2 projects-overlay">
               {relProjects.map((p) => (
                 <Link key={p.slug} className="card-project" href={`/projekte/${p.slug}`}>
                   <div className="img">
