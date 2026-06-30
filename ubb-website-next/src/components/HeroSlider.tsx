@@ -27,7 +27,7 @@ const SLIDES: Slide[] = [
     ctaHref2: '/projekte',
   },
   {
-    image: serviceImages['bodenarbeiten'],
+    image: serviceImages['bodenarbeiten'] ?? heroImage,
     kicker: 'Bodenarbeiten · Estrich & Beschichtung',
     heading: <>Böden, die <em>Jahrzehnte</em> halten.</>,
     lede: 'Estrich, Beschichtung, Fliesen und Spachteltechnik — präzise Bodenarbeiten für anspruchsvolle Wohn- und Gewerbeflächen.',
@@ -37,7 +37,7 @@ const SLIDES: Slide[] = [
     ctaHref2: '/anfrage',
   },
   {
-    image: serviceImages['innenarbeiten'],
+    image: serviceImages['innenarbeiten'] ?? heroImage,
     kicker: 'Innenausbau · Trockenbau & Putz',
     heading: <>Innenausbau <em>bis ins Detail</em>.</>,
     lede: 'Trockenbau, Putz, Stuck und Malerarbeiten — alle Gewerke koordiniert, ein Ansprechpartner für alles.',
@@ -67,7 +67,10 @@ export default function HeroSlider() {
     const id = setInterval(() => {
       if (!isPaused.current) setActive(a => (a + 1) % SLIDES.length)
     }, INTERVAL)
-    return () => clearInterval(id)
+    return () => {
+      clearInterval(id)
+      if (pauseTimer.current) clearTimeout(pauseTimer.current)
+    }
   }, [])
 
   const slide = SLIDES[active]
@@ -81,10 +84,12 @@ export default function HeroSlider() {
           {String(active + 1).padStart(2, '0')}
         </span>
 
-        <div key={active} className="hs-content">
-          <span className="hs-kicker">{slide.kicker}</span>
-          <h1 className="hs-heading">{slide.heading}</h1>
-          <p className="hs-lede">{slide.lede}</p>
+        <div id="slide-panel" role="tabpanel" aria-labelledby={`slide-tab-${active}`} className="hs-content">
+          <div key={active} className="hs-anim">
+            <span className="hs-kicker">{slide.kicker}</span>
+            <h1 className="hs-heading">{slide.heading}</h1>
+            <p className="hs-lede">{slide.lede}</p>
+          </div>
           <div className="hs-ctas">
             <Link className="btn btn-primary" href={slide.ctaHref}>
               {slide.cta} <span className="arrow">→</span>
@@ -100,8 +105,10 @@ export default function HeroSlider() {
             {SLIDES.map((_, i) => (
               <button
                 key={i}
+                id={`slide-tab-${i}`}
                 role="tab"
                 aria-selected={i === active}
+                aria-controls="slide-panel"
                 aria-label={`Folie ${i + 1}`}
                 className={`hs-seg${i === active ? ' active' : ''}`}
                 onClick={() => go(i)}
@@ -124,7 +131,7 @@ export default function HeroSlider() {
           <div key={i} className={`hs-img${i === active ? ' active' : ''}`}>
             {i === 0
               ? <Image src={s.image} alt="" fill priority sizes="(max-width:820px) 100vw, 56vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />
-              : <Image src={s.image} alt="" fill loading="eager" sizes="(max-width:820px) 100vw, 56vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />
+              : <Image src={s.image} alt="" fill sizes="(max-width:820px) 100vw, 56vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />
             }
           </div>
         ))}

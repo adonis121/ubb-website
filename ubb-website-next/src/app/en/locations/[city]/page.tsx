@@ -73,9 +73,9 @@ export default async function EnCityPage({ params }: { params: Promise<{ city: s
 
       <section className="section alt">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Services</span>
-            <h2>What we offer in {c.name}.</h2>
+            <div><h2>What we offer in {c.name}.</h2></div>
           </div>
           <div className="service-feat-list">
             {services.map((s) => (
@@ -101,11 +101,11 @@ export default async function EnCityPage({ params }: { params: Promise<{ city: s
       {relProjects.length > 0 && (
         <section className="section">
           <div className="wrap">
-            <div className="section-head">
+            <div className="section-head section-head-v">
               <span className="kicker">References</span>
-              <h2>Projects in {c.name}.</h2>
+              <div><h2>Projects in {c.name}.</h2></div>
             </div>
-            <div className="grid cols-2">
+            <div className="grid cols-2 projects-overlay">
               {relProjects.map((p) => (
                 <Link key={p.slug} className="card-project" href={`/en/projects/${p.slug}`}>
                   <div className="img">
@@ -128,9 +128,9 @@ export default async function EnCityPage({ params }: { params: Promise<{ city: s
 
       <section className="section alt">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">FAQ</span>
-            <h2>Frequently asked questions — {c.name}.</h2>
+            <div><h2>Frequently asked questions — {c.name}.</h2></div>
           </div>
           <div className="faq">
             {c.faq.map((item) => (

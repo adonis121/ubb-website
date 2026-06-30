@@ -35,9 +35,11 @@ export default function EnglishHomePage() {
                 <p>From core renovation to demolition: we bring existing buildings back to their best.</p>
                 <span className="sr-cta">Learn more →</span>
               </div>
-              <div className="sr-image">
-                <Image src={serviceImages['sanierung-umbau']} alt="Renovation & Conversion" fill style={{objectFit:'cover'}} sizes="40vw" />
-              </div>
+              {serviceImages['sanierung-umbau'] && (
+                <div className="sr-image">
+                  <Image src={serviceImages['sanierung-umbau']} alt="" fill style={{objectFit:'cover'}} sizes="40vw" />
+                </div>
+              )}
             </Link>
             <Link className="service-row" href="/en/flooring">
               <span className="sr-num">02</span>
@@ -46,9 +48,11 @@ export default function EnglishHomePage() {
                 <p>Screed, coatings, tiles and micro-cement — floors built to last decades, not years.</p>
                 <span className="sr-cta">Learn more →</span>
               </div>
-              <div className="sr-image">
-                <Image src={serviceImages['bodenarbeiten']} alt="Floor Works" fill style={{objectFit:'cover'}} sizes="40vw" />
-              </div>
+              {serviceImages['bodenarbeiten'] && (
+                <div className="sr-image">
+                  <Image src={serviceImages['bodenarbeiten']} alt="" fill style={{objectFit:'cover'}} sizes="40vw" />
+                </div>
+              )}
             </Link>
             <Link className="service-row" href="/en/interior">
               <span className="sr-num">03</span>
@@ -57,9 +61,11 @@ export default function EnglishHomePage() {
                 <p>Drylining, plastering, stucco and painting — precise interior fit-out to the last detail.</p>
                 <span className="sr-cta">Learn more →</span>
               </div>
-              <div className="sr-image">
-                <Image src={serviceImages['innenarbeiten']} alt="Interior Works" fill style={{objectFit:'cover'}} sizes="40vw" />
-              </div>
+              {serviceImages['innenarbeiten'] && (
+                <div className="sr-image">
+                  <Image src={serviceImages['innenarbeiten']} alt="" fill style={{objectFit:'cover'}} sizes="40vw" />
+                </div>
+              )}
             </Link>
           </div>
         </div>

@@ -48,9 +48,11 @@ export default function HomePage() {
                 <p>Von der Kernsanierung bis zum Abbruch: Wir bringen Bestandsgebäude in ihre beste Form.</p>
                 <span className="sr-cta">Mehr erfahren →</span>
               </div>
-              <div className="sr-image">
-                <Image src={serviceImages['sanierung-umbau']} alt="Sanierung & Umbau" fill style={{objectFit:'cover'}} sizes="40vw" />
-              </div>
+              {serviceImages['sanierung-umbau'] && (
+                <div className="sr-image">
+                  <Image src={serviceImages['sanierung-umbau']} alt="" fill style={{objectFit:'cover'}} sizes="40vw" />
+                </div>
+              )}
             </Link>
             <Link className="service-row" href="/bodenarbeiten">
               <span className="sr-num">02</span>
@@ -59,9 +61,11 @@ export default function HomePage() {
                 <p>Estrich, Beschichtung, Fliesen und Spachteltechnik — Böden für Jahrzehnte, nicht Jahre.</p>
                 <span className="sr-cta">Mehr erfahren →</span>
               </div>
-              <div className="sr-image">
-                <Image src={serviceImages['bodenarbeiten']} alt="Bodenarbeiten" fill style={{objectFit:'cover'}} sizes="40vw" />
-              </div>
+              {serviceImages['bodenarbeiten'] && (
+                <div className="sr-image">
+                  <Image src={serviceImages['bodenarbeiten']} alt="" fill style={{objectFit:'cover'}} sizes="40vw" />
+                </div>
+              )}
             </Link>
             <Link className="service-row" href="/innenarbeiten">
               <span className="sr-num">03</span>
@@ -70,9 +74,11 @@ export default function HomePage() {
                 <p>Trockenbau, Putz, Stuck und Malerarbeiten — präziser Innenausbau bis ins Detail.</p>
                 <span className="sr-cta">Mehr erfahren →</span>
               </div>
-              <div className="sr-image">
-                <Image src={serviceImages['innenarbeiten']} alt="Innenarbeiten" fill style={{objectFit:'cover'}} sizes="40vw" />
-              </div>
+              {serviceImages['innenarbeiten'] && (
+                <div className="sr-image">
+                  <Image src={serviceImages['innenarbeiten']} alt="" fill style={{objectFit:'cover'}} sizes="40vw" />
+                </div>
+              )}
             </Link>
           </div>
         </div>

@@ -57,7 +57,11 @@ export default function Header() {
   const pathname = usePathname()
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60)
+    const onScroll = () => setScrolled(prev => {
+      const next = window.scrollY > 60
+      return prev === next ? prev : next
+    })
+    onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -110,7 +114,10 @@ export default function Header() {
           </Link>
           <button
             className="nav-toggle"
-            aria-label="Navigation öffnen"
+            aria-label={open
+              ? (isEn ? 'Close navigation' : 'Navigation schließen')
+              : (isEn ? 'Open navigation' : 'Navigation öffnen')}
+            aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
             {open ? '✕' : '☰'}

@@ -51,14 +51,14 @@ export default async function EnFlooringSubPage({ params }: { params: Promise<{ 
 
       <section className="section">
         <div className="wrap">
-          <div className="section-head"><span className="kicker">Scope of work</span><h2>What we take care of.</h2></div>
+          <div className="section-head section-head-v"><span className="kicker">Scope of work</span><div><h2>What we take care of.</h2></div></div>
           <ul className="checklist">{sub.leistungsumfang.map((item) => <li key={item}>{item}</li>)}</ul>
         </div>
       </section>
 
       <section className="section alt">
         <div className="wrap">
-          <div className="section-head"><span className="kicker">Process</span><h2>How your project runs.</h2></div>
+          <div className="section-head section-head-v"><span className="kicker">Process</span><div><h2>How your project runs.</h2></div></div>
           <div className="process">
             {sub.process.map((step) => (
               <div key={step.title} className="step-card"><h3>{step.title}</h3><p>{step.description}</p></div>
@@ -70,8 +70,8 @@ export default async function EnFlooringSubPage({ params }: { params: Promise<{ 
       {relProjects.length > 0 && (
         <section className="section">
           <div className="wrap">
-            <div className="section-head"><span className="kicker">References</span><h2>Flooring projects from the region.</h2></div>
-            <div className="grid cols-2">
+            <div className="section-head section-head-v"><span className="kicker">References</span><div><h2>Flooring projects from the region.</h2></div></div>
+            <div className="grid cols-2 projects-overlay">
               {relProjects.map((p) => (
                 <Link key={p.slug} className="card-project" href={`/en/projects/${p.slug}`}>
                   <div className="img">
@@ -94,7 +94,7 @@ export default async function EnFlooringSubPage({ params }: { params: Promise<{ 
 
       <section className="section alt">
         <div className="wrap">
-          <div className="section-head"><span className="kicker">FAQ</span><h2>Frequently asked questions about {sub.title}.</h2></div>
+          <div className="section-head section-head-v"><span className="kicker">FAQ</span><div><h2>Frequently asked questions about {sub.title}.</h2></div></div>
           <div className="faq">
             {sub.faq.map((item) => (
               <details key={item.question}>

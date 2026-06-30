@@ -27,7 +27,7 @@ const SLIDES: Slide[] = [
     ctaHref2: '/en/projects',
   },
   {
-    image: serviceImages['bodenarbeiten'],
+    image: serviceImages['bodenarbeiten'] ?? heroImage,
     kicker: 'Floor Works · Screed & Coatings',
     heading: <>Floors built to <em>last decades</em>.</>,
     lede: 'Screed, coatings, tiles and micro-cement — precise floor works for demanding residential and commercial spaces.',
@@ -37,7 +37,7 @@ const SLIDES: Slide[] = [
     ctaHref2: '/en/contact',
   },
   {
-    image: serviceImages['innenarbeiten'],
+    image: serviceImages['innenarbeiten'] ?? heroImage,
     kicker: 'Interior Fit-Out · Drylining & Plastering',
     heading: <>Interior fit-out <em>to the last detail</em>.</>,
     lede: 'Drylining, plastering, stucco and painting — all trades coordinated, one contact person for everything.',
@@ -67,7 +67,10 @@ export default function EnHeroSlider() {
     const id = setInterval(() => {
       if (!isPaused.current) setActive(a => (a + 1) % SLIDES.length)
     }, INTERVAL)
-    return () => clearInterval(id)
+    return () => {
+      clearInterval(id)
+      if (pauseTimer.current) clearTimeout(pauseTimer.current)
+    }
   }, [])
 
   const slide = SLIDES[active]
@@ -81,10 +84,12 @@ export default function EnHeroSlider() {
           {String(active + 1).padStart(2, '0')}
         </span>
 
-        <div key={active} className="hs-content">
-          <span className="hs-kicker">{slide.kicker}</span>
-          <h1 className="hs-heading">{slide.heading}</h1>
-          <p className="hs-lede">{slide.lede}</p>
+        <div id="slide-panel" role="tabpanel" aria-labelledby={`slide-tab-${active}`} className="hs-content">
+          <div key={active} className="hs-anim">
+            <span className="hs-kicker">{slide.kicker}</span>
+            <h1 className="hs-heading">{slide.heading}</h1>
+            <p className="hs-lede">{slide.lede}</p>
+          </div>
           <div className="hs-ctas">
             <Link className="btn btn-primary" href={slide.ctaHref}>
               {slide.cta} <span className="arrow">→</span>
@@ -100,8 +105,10 @@ export default function EnHeroSlider() {
             {SLIDES.map((_, i) => (
               <button
                 key={i}
+                id={`slide-tab-${i}`}
                 role="tab"
                 aria-selected={i === active}
+                aria-controls="slide-panel"
                 aria-label={`Slide ${i + 1}`}
                 className={`hs-seg${i === active ? ' active' : ''}`}
                 onClick={() => go(i)}
@@ -124,7 +131,7 @@ export default function EnHeroSlider() {
           <div key={i} className={`hs-img${i === active ? ' active' : ''}`}>
             {i === 0
               ? <Image src={s.image} alt="" fill priority sizes="(max-width:820px) 100vw, 56vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />
-              : <Image src={s.image} alt="" fill loading="eager" sizes="(max-width:820px) 100vw, 56vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />
+              : <Image src={s.image} alt="" fill sizes="(max-width:820px) 100vw, 56vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />
             }
           </div>
         ))}

@@ -53,9 +53,9 @@ export default async function ServiceSubPage({ params }: { params: Promise<{ ser
 
       <section className="section">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Leistungsumfang</span>
-            <h2>Was wir für Sie übernehmen.</h2>
+            <div><h2>Was wir für Sie übernehmen.</h2></div>
           </div>
           <ul className="checklist">
             {sub.leistungsumfang.map((item) => <li key={item}>{item}</li>)}
@@ -65,9 +65,9 @@ export default async function ServiceSubPage({ params }: { params: Promise<{ ser
 
       <section className="section alt">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Ablauf</span>
-            <h2>So läuft Ihr Projekt.</h2>
+            <div><h2>So läuft Ihr Projekt.</h2></div>
           </div>
           <div className="process">
             {sub.process.map((step) => (
@@ -83,11 +83,11 @@ export default async function ServiceSubPage({ params }: { params: Promise<{ ser
       {relProjects.length > 0 && (
         <section className="section">
           <div className="wrap">
-            <div className="section-head">
+            <div className="section-head section-head-v">
               <span className="kicker">Referenzen</span>
-              <h2>Innenausbau aus der Region.</h2>
+              <div><h2>Innenausbau aus der Region.</h2></div>
             </div>
-            <div className="grid cols-2">
+            <div className="grid cols-2 projects-overlay">
               {relProjects.map((p) => (
                 <Link key={p.slug} className="card-project" href={`/projekte/${p.slug}`}>
                   <div className="img">
@@ -110,9 +110,9 @@ export default async function ServiceSubPage({ params }: { params: Promise<{ ser
 
       <section className="section alt">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">FAQ</span>
-            <h2>Häufige Fragen zu {sub.title}.</h2>
+            <div><h2>Häufige Fragen zu {sub.title}.</h2></div>
           </div>
           <div className="faq">
             {sub.faq.map((item) => (

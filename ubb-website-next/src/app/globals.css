@@ -30,10 +30,12 @@
   --text-xl: clamp(1.5rem, 2vw, 1.75rem);
   --text-2xl: clamp(1.875rem, 3vw, 2.5rem);
   --text-3xl: clamp(2.25rem, 4.5vw, 3.25rem);
+  --text-4xl: clamp(3rem, 5.5vw, 4.25rem);
   --text-hero: clamp(2.5rem, 5.5vw, 4.5rem);
 
   --s-1: .5rem; --s-2: 1rem; --s-3: 1.5rem; --s-4: 2rem;
-  --s-6: 3rem; --s-8: 4rem; --s-12: 6rem; --s-16: 8rem;
+  --s-6: 3rem; --s-8: 4rem; --s-10: 5rem; --s-12: 6rem;
+  --s-14: 7rem; --s-16: 8rem; --s-20: 10rem;
 
   --radius: 8px;
   --container: 1200px;
@@ -57,7 +59,7 @@ a { color: inherit; }
 .section.dark { background: var(--navy); color: var(--paper); }
 .section.dark .section-head p { color: var(--fog); }
 .section.green { background: var(--green-tint); }
-.section-head { max-width: 680px; margin-bottom: var(--s-6); }
+.section-head { margin-bottom: var(--s-6); }
 .section-head h2 { font-size: var(--text-2xl); font-weight: 700; margin-bottom: var(--s-1); }
 .section-head p { color: var(--slate); }
 
@@ -416,7 +418,8 @@ a { color: inherit; }
 
 .hs-watermark { position: absolute; right: -0.05em; bottom: 3rem; font-family: var(--font-display); font-size: clamp(7rem, 18vw, 16rem); font-weight: 800; line-height: 1; color: rgba(255,255,255,.05); letter-spacing: -0.04em; user-select: none; pointer-events: none; transition: all .6s ease; }
 
-.hs-content { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: var(--s-3); position: relative; z-index: 1; animation: hs-enter .55s cubic-bezier(.4,0,.2,1); }
+.hs-content { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: var(--s-3); position: relative; z-index: 1; }
+.hs-anim { display: flex; flex-direction: column; gap: var(--s-3); animation: hs-enter .55s cubic-bezier(.4,0,.2,1); }
 @keyframes hs-enter { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
 
 .hs-kicker { font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .22em; color: var(--green-tint); display: block; }
@@ -465,7 +468,7 @@ a { color: inherit; }
 .section-head-v .kicker { writing-mode: vertical-rl; transform: rotate(180deg); margin-bottom: 0; padding-top: 6px; letter-spacing: .25em; }
 @media (max-width: 640px) {
   .section-head-v { grid-template-columns: 1fr; }
-  .section-head-v .kicker { writing-mode: horizontal-tb; transform: none; }
+  .section-head-v .kicker { writing-mode: horizontal-tb; transform: none; letter-spacing: .18em; margin-bottom: var(--s-1); }
 }
 
 /* SERVICE LIST */
@@ -514,8 +517,8 @@ a { color: inherit; }
 @media (max-width: 860px) {
   .projects-bento { grid-template-columns: 1fr 1fr; grid-template-rows: 260px 260px; }
   .projects-bento .card-project:nth-child(1),
-  .projects-bento .card-project:nth-child(2),
-  .projects-bento .card-project:nth-child(3) { grid-column: auto; grid-row: auto; }
+  .projects-bento .card-project:nth-child(2) { grid-column: auto; grid-row: auto; }
+  .projects-bento .card-project:nth-child(3) { grid-column: 1 / -1; grid-row: auto; }
 }
 @media (max-width: 560px) {
   .projects-bento { grid-template-columns: 1fr; grid-template-rows: 260px 260px 260px; }

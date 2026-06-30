@@ -79,9 +79,9 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
 
       <section className="section alt">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">Leistungen</span>
-            <h2>Was wir in {c.name} anbieten.</h2>
+            <div><h2>Was wir in {c.name} anbieten.</h2></div>
           </div>
           <div className="service-feat-list">
             {services.map((s) => (
@@ -107,11 +107,11 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       {relProjects.length > 0 && (
         <section className="section">
           <div className="wrap">
-            <div className="section-head">
+            <div className="section-head section-head-v">
               <span className="kicker">Referenzen</span>
-              <h2>Projekte in {c.name}.</h2>
+              <div><h2>Projekte in {c.name}.</h2></div>
             </div>
-            <div className="grid cols-2">
+            <div className="grid cols-2 projects-overlay">
               {relProjects.map((p) => (
                 <Link key={p.slug} className="card-project" href={`/projekte/${p.slug}`}>
                   <div className="img">
@@ -134,9 +134,9 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
 
       <section className="section alt">
         <div className="wrap">
-          <div className="section-head">
+          <div className="section-head section-head-v">
             <span className="kicker">FAQ</span>
-            <h2>Häufige Fragen — {c.name}.</h2>
+            <div><h2>Häufige Fragen — {c.name}.</h2></div>
           </div>
           <div className="faq">
             {c.faq.map((item) => (
